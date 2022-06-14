@@ -30,7 +30,7 @@
         </form>
 
         {% if data is iterable %}
-        
+        <h2>Adjusted Close Prices</h2>
         {% for table in tables %}
             {{titles[loop.index]}}
             {{ table|safe }}
