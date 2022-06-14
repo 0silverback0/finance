@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Code</title>
+</head>
+<body>
+    <h1>Finance Code</h1>
+    
+    <form class="" method="POST" action="/">
+        
+        {{ form.hidden_tag() }}
+    
+        {% for field in form
+              if field.widget.input_type != 'hidden' %}
+    
+          <p>
+            {{ field.label }}
+            {{ field }}
+    
+            {% for error in field.errors %}
+              {{ error }}
+            {% endfor %}
+          </p>
+        
+        {% endfor %}
+        
+        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+        </form>
+
+        {% if data is iterable %}
+        
+        {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+        {% endfor %}
+        
+        {% endif %}
+    
+</body>
+</html>
