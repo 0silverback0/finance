@@ -31,6 +31,6 @@ def home():
         
         data = getAdjustedClose(stocks)
     
-        return render_template('index.html', form=form, tables=[data.to_html(classes='data')], titles=data.columns)
+        return render_template('index.html', form=form, data=data)
     return render_template('index.html', form=form, data='')
 
